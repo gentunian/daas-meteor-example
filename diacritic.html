@@ -1,0 +1,69 @@
+    <head>
+        <title>diacritic</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+        <link href="http://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet" type="text/css">
+    </head>
+
+    <body>
+        {{> narrowJumbotron}}
+    </body>
+
+    <template name="textInput">
+        <div class="form-group">
+            <label for="foo" class="control-label">Type some text</label>
+            <input id="foo" type="text" placeholder="type me..." class="form-control" tabindex="1" rel="popover" style="font-size: 18px;">
+        </div>
+        <div id="meh"></div>
+    </template>
+
+    <template name="popover">
+        <div class="popover-example">
+        <div class="arrow"></div>
+        <h3 class="popover-title">Diacritics Service</h3>
+        <div class="popover-content light-group">
+            <div class="row">
+                <div class="col-md-12">
+                    {{#each chars}}
+                    <button class="btn dark key" style="font-size: 18px; margin-bottom:5px;" tabindex="{{index}}">{{data.unicode}}</button>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+        </div>
+    </template>
+
+    <template name="narrowJumbotron">
+        <div class="container">
+            <div class="header clearfix">
+                <h3 class="text-muted">DaaS meteor client example</h3>
+            </div>
+            <div class="row marketing">
+                <div class="col-lg-12 poper">
+                    <div class="form">
+                        {{> textInput}}
+                    </div>
+                    <h2 id="typed" style="text-align: center"></h2>
+                </div>
+            </div>
+            <div class="jumbotron">
+                <img src="/1.jpg" class="img-responsive">
+            </div>
+            <footer class="footer">
+               <p>&copy; letest 2015</p>
+           </footer>
+       </div>
+    </template>
